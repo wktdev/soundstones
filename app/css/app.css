@@ -1,0 +1,207 @@
+body {
+  padding-top: 50px;
+ 
+
+
+}
+
+ul{
+list-style-type: none;
+}
+
+.oscNoteValueInput{
+    -webkit-appearance: slider-vertical;
+    position:absolute;
+    width: 20px;
+    height: 75px;
+    float:right;
+    right:-23px;
+}
+
+#browser-disclaimer{
+position:relative;
+left:10px;
+top:5px;
+
+}
+
+
+.oscPitchOctave{
+
+	width:76px;
+	height:20px;
+	top:74px;
+	position:absolute;
+	left:0px;
+}
+
+
+
+.instrumentParameters{
+	position:absolute;
+	width:85%;
+	height:25%;
+	top:75%;
+	opacity:0.1;
+	background-color:blue;
+}
+
+.oscParameters{
+	position:absolute;
+	width:100%;
+	height:100px;
+	opacity:0.5;
+	background-color:blue;
+	
+	
+}
+
+#background-img{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0.2;
+background-image:url('back.png');
+background-repeat:repeat-y;
+background-repeat:repeat-x;
+
+}
+
+.btn{
+position:relative;
+margin:10px;
+left:100px;;
+	
+}
+
+.modal-content{
+	width:300px;
+	top:200px;
+}
+
+#instrument-name-form{
+	width:260px;
+	height:30px;
+}
+
+.button-container{
+    position:relative;
+    top:20px;;
+	margin-left: 10%;
+}
+
+.application-area-container{
+	position:relative;
+	top:50px;
+    text-align: center;
+    width:100%;
+    height:400px;
+
+
+	
+}
+
+.patch-list{
+	margin-left:0px;
+ 	position:relative;
+ 	float:right;
+opacity:0.9;
+ 	width:15%;
+ 	height:100%;
+	background-color:#5a3862; 
+   box-shadow: 0px 1px 1px 1px #ddd;
+   
+}
+
+#patch-names{
+	
+	position:absolute;
+	left:-25%;
+	top:0%;
+	color:white;
+
+}
+
+.application-area {
+  position:relative;
+  padding: 10px 10px;
+  text-align: center;
+  border-style:solid;
+  border-width: 1px;
+  border-color:grey;
+  width:85%;
+  height:300px;
+
+  box-shadow: 0px 1px 1px 1px #ddd;
+}
+
+#create-synth{
+	position:relative;
+	width:100px;
+	height:100px;
+}
+
+.synth {
+position: absolute;
+margin:2px;
+left: 30px;
+border-style: solid;
+border-width: 04px;
+border-color: rgba(196, 155, 204, 1);
+width: 5.9em;
+height: 5.9em;
+background-color: rgba(117,125,150,0.85);
+border-radius: 15%;
+opacity:0.9;
+}
+
+.synthLocked{
+position: absolute;
+margin:2px;
+left: 30px;
+border-style: solid;
+border-width: 04px;
+border-color: rgba(196, 155, 204, 1);
+width: 5.9em;
+height: 5.9em;
+background-color: rgba(66,74,97,0.85);
+border-radius: 15%;
+opacity:1;
+}
+
+.mute-image{
+display:none;
+}
+
+.mute-on-image{
+position:absolute;
+display:block;
+top:49px;
+left:443px;
+}
+
+
+#example-patch{
+	
+}
+
+.app { 
+width: 150px; 
+height: 150px; 
+padding: 0.5em; 
+background-color: rgba(100,118,118,0.61);
+}
+
+#about-modal-content{
+	width:500px;
+}
+
+.application-area .ui-selected {
+background: #ffe481;
+color: white;
+opacity:0.8;
+}
+.application-area .ui-selecting {background: #FFEDA3;}
+.ui-selected {background: rgba(#FFEDA3); color: white;}
+.ui-selectable-helper {position: absolute; z-index: 100; border:1px dotted black;}
+.ui-draggable ui-draggable-disabled ui-state-disabled ui-selectee{background-color:green;}

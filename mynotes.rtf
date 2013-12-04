@@ -1,0 +1,141 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww19100\viewh16280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 Main techniques learned and needed for CRUD application development.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 Always use PDO for php scripts!\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+\
+\
+\
+\
+
+\b\fs32 Table creation and relational ID connecting.\
+\
+Explanation of relational connecting.\
+\
+
+\b0\fs24 When creating synths we need a way to create a relationship between them and each patch that is saved in the database.\
+\
+To create this relationship select the synths table and go to the structure tab in phpmyadmin and click on relational view option at the bottom of the page.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\b\fs32 JSON structure\
+
+\b0\fs24 \
+\
+\
+Create a basic JSON object to hold all DOM elements.  Keep this as simple as possible. Structure it similar to below. Notice in the below example you have an object that 'holds' a series of keys with arrays as values. \
+\
+\
+var patch = \{\
+	\
+		"patch_name": "",\
+\
+		"synths": [ \
+\
+		],\
+		\
+		"synth_octave_pitch_sliders": [ \
+		\
+		],\
+		\
+		"synth_note_pitch_sliders": [ \
+		\
+		],\
+		\
+		"synth_waveform_type_sliders": [ \
+		\
+		],\
+		\
+		"synth_filter_sliders": [ \
+		\
+		]\
+	\}\
+\
+\
+\
+
+\b\fs32 AJAX\'85\'85.this is how you get data (like variables and objects)  from Javascript over to PHP where it can be stored in the database. AJAX is also used to get PHP data back to Javascript!\
+\
+
+\b0 The way this works is you run a function that launches an ajax block. Inside 
+\b data
+\b0  you place a JSON object ( in this case its called patch) . This information then becomes accessible to the php script that is launched in 
+\b url
+\b0\fs24 \
+\
+\
+\
+		$.ajax(\{\
+			type: 'POST',\
+			url: 'php/pdo/add.php',\
+			data: \{ mydata: patch\},\
+			success: function() \{\
+				\
+\
+				\}\
+			\});\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\b\fs32 Using JSON sent data in PHP
+\b0\fs24 \
+\
+
+\b The PHP script that is launched first needs to store the data in a variable and then ' encode' and 'decode' it.  
+\b0 \
+\
+$patchData = $_POST['mydata'];\
+$encoded = json_encode($patchData,true);\
+$decoded = json_decode($encoded, true);\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\b \cf0 Before you can use each key in the JSON object you must decode it.
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+$synthObj = $decoded['synths'];     
+\b  // example
+\b0 \
+\
+\
+\
+\
+\
+\
+\
+}
